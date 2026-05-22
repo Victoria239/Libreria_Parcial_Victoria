@@ -22,10 +22,13 @@ class Producto:
         return descuento
 
     def calcular_precio_final(self) -> float:
-        precio_con_descuento = self.precio_base - (self.precio_base * self.descuento / 100)
-        precio_final = precio_con_descuento + (precio_con_descuento * self.IVA)
+        precio_con_descuento = self._calcular_precio_con_descuento()
+        precio_final = self._aplicar_iva(precio_con_descuento)
 
-        if precio_final < 0:
-            return 0
+        return max(precio_final, 0)
 
-        return precio_final
+    def _calcular_precio_con_descuento(self) -> float:
+        return self.precio_base * (1 - self.descuento / 100)
+
+    def _aplicar_iva(self, valor: float) -> float:
+        return valor * (1 + self.IVA)
