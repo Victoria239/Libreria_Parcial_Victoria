@@ -1,6 +1,5 @@
 import pytest
-from src.libreria.producto import Producto
-
+from libreria.producto import Producto
 
 def test_crear_producto_con_precio_base_valido():
     producto = Producto("Libro", 10000)
