@@ -50,3 +50,16 @@ Justificación: Es necesario definir el criterio de redondeo para que los cálcu
 | CP07 | Regla 2 | Aplicar descuento mayor al permitido | Producto válido creado | Precio: 10000, descuento: 41 | Aplicar descuento | El sistema rechaza el descuento con mensaje claro | Negativo |
 | CP08 | Regla 3 | Calcular precio final con descuento e IVA | Producto válido creado | Precio: 10000, descuento: 10 | Calcular precio final | Primero aplica descuento y luego IVA del 19% | Positivo |
 | CP09 | Regla 3 | Calcular precio final sin descuento | Producto válido creado | Precio: 10000, descuento: 0 | Calcular precio final | Precio final igual a 11900 | Borde |
+
+
+## Reporte de cobertura
+
+```text
+Name                       Stmts   Miss  Cover
+----------------------------------------------
+src\libreria\__init__.py       0      0   100%
+src\libreria\producto.py      26      0   100%
+tests\test_producto.py        47      0   100%
+----------------------------------------------
+TOTAL                         73      0   100%
+```
